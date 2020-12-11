@@ -56,7 +56,7 @@ class Trainer(object):
             total += labels.size(0)
             correct += (predicted == labels.data).sum()
 
-            # print('[Training Epoch: {}] Batch: {}, Loss: {}'.format(epoch_id, batch_id, loss))
+            print('[Training Epoch: {}] Batch: {}, Loss: {}'.format(epoch_id, batch_id, loss))
         print('Training Epoch: {}, accuracy rate: {}%%'.format(epoch_id, correct / total * 100.0))
 
     def train(self, train_dataset):
