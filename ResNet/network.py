@@ -19,6 +19,7 @@ class BasicBlock(nn.Module):
         if stride != 1 or in_planes != self.expansion*planes:
             # Projection Shortcut
             self.shortcut = nn.Sequential(
+                # 利用1x1的卷积核
                 nn.Conv2d(in_planes, self.expansion*planes, kernel_size=1, stride=stride, bias=False),
                 nn.BatchNorm2d(self.expansion*planes)
             )
